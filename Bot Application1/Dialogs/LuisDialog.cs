@@ -57,7 +57,7 @@ namespace Bot_Application1.Dialogs
         [LuisIntent("ShowMePicture")]
         public async Task ShowMePicture(IDialogContext context, IAwaitable<IMessageActivity> activity, LuisResult result)
         {
-            await context.Forward(new GetImageDialog(_getRandonGiphyService), CallBackAfterLuis, context.Activity, CancellationToken.None);
+            await context.Forward(new GetImageDialog(_getRandonGiphyService, result), CallBackAfterLuis, context.Activity, CancellationToken.None);
         }
 
         private async Task ShowLuisResult(IDialogContext context, LuisResult result)

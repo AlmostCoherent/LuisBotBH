@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
 using Bot_Application1.Services.Interfaces;
+using Microsoft.Bot.Builder.Luis.Models;
 
 namespace Bot_Application1.Dialogs
 {
@@ -11,7 +12,7 @@ namespace Bot_Application1.Dialogs
     {
         IGetRandonGiphyService _getRandomGiphyService;
 
-        public GetImageDialog(IGetRandonGiphyService getRandonGiphyService)
+        public GetImageDialog(IGetRandonGiphyService getRandonGiphyService, LuisResult luisResult)
         {
             _getRandomGiphyService = getRandonGiphyService;
         }
